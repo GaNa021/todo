@@ -21,15 +21,19 @@ export default function Fetch() {
       }
     )
   }
+
   useEffect(() => {
     getTodos()
   })
-
+  console.log(auth.currentUser.uid)
   return (
     <>
-      {todos.map((todo) => {
-        return <h1>{todo.title}</h1>
-      })}
+      hi
+      {todos != null
+        ? todos.map((todo) => {
+            return <h1>{todo.title}</h1>
+          })
+        : null}
     </>
   )
 }
